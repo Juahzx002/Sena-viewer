@@ -28,7 +28,10 @@ Crear y refactorizar las clases hijas: Movie, Serie, Book y Magazine.
 
 Crear la clase Chapter (que no hereda de ninguna de las anteriores).
 
-**⏭️ Tareas de la Etapa 2: Gestión de Datos e Interfaz**
+## ⏭️ Etapa 2: Interfaz y Gestión
+El segundpo paso para el desarrollo de el proyecto es implementar la interfaz y gestion de datos, parta la visualización de los datos e interración del usuario
+
+**📝 Tareas de la Etapa 2: Gestión de Datos e Interfaz**
 La Etapa esta en la lógica de la aplicación y la interfaz de usuario:
 
 Creación de una clase Main para la ejecución del programa y el menú principal.
