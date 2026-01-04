@@ -39,3 +39,14 @@ Creación de una clase Main para la ejecución del programa y el menú principal
 Implementación de una clase MaterialManager para gestionar la lista de todos los contenidos.
 
 Implementación de los métodos de visualización (marcar como visto/leído).
+
+## 🧱 Etapa 3: Interfaz y Lógica de Visualización
+En esta etapa, utilizaremos la característica de Interfaces en Java para asegurar que cualquier contenido que se pueda "ver" o "leer" implemente la misma funcionalidad de marcado, que es clave para el reporte.
+
+**📝 Tareas de la Etapa 3: Interfaz, Visualización y Lógica POO.**
+Creación de la Interfaz: "IVisualizable.java"
+
+Implementación de la Interfaz en Clases Base.
+
+Implementación de la Lógica de Visualización en SenaViewerApp.java.
+

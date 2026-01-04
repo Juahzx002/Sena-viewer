@@ -1,29 +1,46 @@
 package com.senaviewer.model;
 
-public class Movie extends Film {
-    // Atributos específicos
-    private int timeViewed; // Tiempo dedicado a ver la película
+import com.senaviewer.interfaz.IVisualizable;
+import java.util.Date;
 
-    // Constructor, llama al constructor del padre (Film)
-    public Movie(String title, String genre, String creator, int duration, int year) {
-        super(title, genre, creator, duration, year);
-        this.timeViewed = 0; // Por defecto
+public class Movie extends Film implements IVisualizable {
+    // ... (atributos existentes)
+    private int timeViewed; 
+    
+    // ... (Constructor y Getters/Setters)
+
+    // Implementación de IVisualizable
+    @Override
+    public Date startToSee(Date dateI) {
+        // En una app real, esto podría empezar un contador.
+        return dateI;
     }
 
-    // Getters y Setters específicos
-    public int getTimeViewed() {
-        return timeViewed;
+    @Override
+    public void stopToSee(Date dateI, Date dateF) {
+        // Lógica: La diferencia entre dateF y dateI es el tiempo total visto.
+        if (dateI != null && dateF != null) {
+            long initialTime = dateI.getTime();
+            long finalTime = dateF.getTime();
+            
+            // Calcula la diferencia en segundos para simplicidad
+            int seconds = (int) ((finalTime - initialTime) / 1000); 
+            
+            // Si el tiempo visto es mayor o igual a la duración, se marca como visto
+            if (seconds >= this.getDuration() * 60) { // Duración en segundos
+                this.setViewed(true);
+            }
+            
+            this.timeViewed = seconds; // Guardamos el tiempo visto en segundos
+        }
     }
-
-    public void setTimeViewed(int timeViewed) {
-        this.timeViewed = timeViewed;
-    }
-
+    
     // toString()
     @Override
     public String toString() {
+        // Mejorar la salida del tiempo
         return super.toString() + "\n" +
-               "Tiempo Visto: " + timeViewed + " min\n" +
+               "Tiempo Visto: " + timeViewed + " segundos" + "\n" +
                "Tipo: Película";
     }
 }
